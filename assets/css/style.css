@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: grey;
+}
+/* colors */
+.bg-grey {
+    background: lightgrey;
+}
+
+/* tipography */
+a {
+    color: #5586bc;
+}
+h2 {
+    margin-bottom: 10px;
+    font-size: 180%;
+    color: black;
+}
+h2.big {
+    font-size: 220%;
+}
+p.medium {
+    font-size: 130%;
+}
+p.big {
+    font-size: 170%;
+}
+
+/* layout */
+.container {
+    width: 100%;
+    padding: 0 10%;
+}
+/* Creiamo delle classi riutilizzabili */
+.w-50 {
+    width: 50%;
+}
+.col-3 {
+    float: left;
+    width: 33.333%;
+    padding: 0 2%;
+}
+.float-left {
+    float: left;
+}
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* header */
+header {
+    height: 550px;
+    background-color: #0d325a;
+    position: relative;
+    /* facciamo vedere overflow 
+    lo ritroveremo a breve*/
+    overflow: hidden;
+}
+.header-container {
+    /* il contenuto con after sarà nascosto sotto i 1400px */
+    min-width: 1400px;
+    height: 100%;
+    background-image: url('../img/background-header.png');
+    background-repeat: no-repeat;
+    background-position: 115% 110%;
+    background-size: 1000px;
+}
+.header-nav {
+    /* usiamo height e line-height uguali per centrare verticalmente la line-height verrà ereditata dai li contenuti nella nav */ 
+    height: 80px;
+    font-size: 80%;
+    line-height: 80px;
+    text-transform: uppercase;
+    /* OPZIONALE 
+    Gestione verticale logo
+    overflow ci serve per il logo che fuoriesce */
+    overflow: hidden;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-nav .header-logo {
+    width: 15%;
+}
+.header-nav .header-logo img {
+    /* 
+    attenzione questa immagine non è realmente centrata, dobbiamo far coincidere le linee di base del testo. 
+    Dandole un margine sborderà dalla nav
+    */
+    margin-top: 15px;
+    max-width: 100%;
+}
+.header-nav .header-nav-center {
+    width: 45%;
+}
+.header-nav .header-nav-center a:hover,
+.header-nav .header-nav-center a:active,
+.header-nav .header-nav-center a:focus {
+    color: #e3ba3c;
+}
+.header-nav .header-nav-right {
+    width: 40%;
+    text-align: right;
+}
+
+/* menu */
+.menu-inline {
+    list-style: none;
+}
+
+.menu-inline li {
+    display: inline;
+    padding: 0 10px;
+}
+
+/* buttons */
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    line-height: 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.btn-large {
+    padding: 20px;
+}
+.btn-green {
+    background-color: #7cbb02;
+}
+.btn-blue {
+    background-color: #0e325a;
+    padding-right: 30px;
+    padding-left: 30px;
+    border: 1px solid white;
+}
+
+/* jumbotron */
+.jumbotron {
+    position: relative;
+    /* 550px - 80px */
+    height: 470px; 
+}
+.jumbotron-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.jumbotron h1 {
+    color: white;
+    font-size: 350%;
+    margin-bottom: 30px;
+}   
+
+/* main */
+#efficency {
+    padding: 40px 0;
+    text-align: center;
+}
+#efficency p {
+    color: grey;
+}
+
+/* info */
+#info {
+    margin: 0 1%;
+    padding: 40px 8%;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.info-data-img {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.info-data-heading { 
+    position: relative;
+    min-height: 90px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 180%; 
+    color: #7cbb02;
+}
+.info-data-heading:after {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    content: '';
+    display: block;
+    width: 20%;
+    height: 1px;
+   /*  background: grey; */
+    border-bottom: 1px solid gray;
+}
+.info-data-text { 
+    font-size: 120%;
+    line-height: 150%;
+    color: grey;
+}
+
+/* plan */
+#plan {
+    width: 80%;
+    margin: 40px auto;
+}
+.plan-img,
+.plan-info {
+    padding: 0 5%;
+}
+.plan-text p {
+    margin-bottom: 20px;
+}
+
+/* structure */
+#structure {
+    padding: 50px 10%;
+}
+.structure-title {
+    line-height: 50px;
+}
+.structure-select {
+    text-align: right;
+}
+.structure-select h3,
+.structure-select a {
+    display: inline-block;
+    line-height: 50px;
+}
+.structure-select h3 {
+    width: 10%;
+}
+.structure-select span {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    margin: 0 5%;
+    border-bottom: 1px solid grey;
+    text-align: left;
+    font-size: 130%;
+}
+.structure-select span i {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* help */
+#help {
+    position: fixed;
+    bottom: 0;
+    right: 15%;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    background: #7cbb02;
+}
+#help a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
